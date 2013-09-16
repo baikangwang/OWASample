@@ -7,7 +7,7 @@ using System.Net;
 using System.Security;
 using System.Security.Authentication;
 using System.Text;
-using OWASample;
+using OWA.Internal;
 
 namespace OWACalendar
 {
@@ -17,9 +17,9 @@ namespace OWACalendar
         {
             try
             {
-                WebDAVRequest request = new WebDAVRequest();
+                OWARequest request = new OWARequest();
                 request.Authenticate();
-                //request.RunQuery();
+                request.RunQuery();
             }
             catch (SecurityException e)
             {
@@ -47,6 +47,6 @@ namespace OWACalendar
             }
 
             Console.Read();
-        }
+         }
     }
 }

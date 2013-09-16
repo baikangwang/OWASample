@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"?>
+<a:multistatus
+xmlns:b="urn:uuid:c2f41010-65b3-11d1-a29f-00aa00c14882/"
+xmlns:e="urn:schemas:httpmail:"
+xmlns:d="urn:schemas:mailheader:"
+xmlns:c="xml:"
+xmlns:f="http://schemas.microsoft.com/exchange/"
+xmlns:i="urn:schemas-microsoft-com:office:office"
+xmlns:j="http://schemas.microsoft.com/repl/"
+xmlns:g="urn:schemas:calendar:"
+xmlns:h="urn:schemas-microsoft-com:exch-data:"
+xmlns:a="DAV:">
+  <a:contentrange>0-24</a:contentrange>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20CMFG-431%20_xF8FF_%20Universal%20converter%20concern-2.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <f:permanenturl>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/-FlatUrlSpace-/42a26a4d7327004090e5e8144e9b0808-7dff0be/42a26a4d7327004090e5e8144e9b0808-8c5b79e</f:permanenturl>
+        <f:mid b:dt="i8">-7009917656828477439</f:mid>
+        <f:outlookmessageclass>IPM.Note</f:outlookmessageclass>
+        <f:ntsecuritydescriptor b:dt="bin.base64">CAAEAAAAAAABAC+MMAAAAEwAAAAAAAAAFAAAAAIAHAABAAAAARAUAL8PHwABAQAAAAAABQcAAAABBQAAAAAABRUAAABkwBBIH94COkrPegKSaAIAAQIAAAAAAAUgAAAAIAIAAA==</f:ntsecuritydescriptor>
+        <f:sensitivity b:dt="int">0</f:sensitivity>
+      </a:prop>
+    </a:propstat>
+    <a:propstat>
+      <a:status>HTTP/1.1 404 Resource Not Found</a:status>
+      <a:prop>
+        <f:outlookfolderclass/>
+        <f:contentstate/>
+        <f:deleteditemsagelimit/>
+        <f:foldersize/>
+        <f:replicationmessagepriority/>
+        <f:replicationstyle/>
+        <f:publicfolderemailaddress/>
+        <f:noaging/>
+        <f:schemaversion/>
+        <f:disallowmdbwideexpiry/>
+        <f:contentexpiryagelimit/>
+        <f:folderproxy/>
+        <f:replicationschedule/>
+        <f:adminfolderdescription/>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+</a:multistatus>
+

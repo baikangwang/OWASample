@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<a:multistatus
+xmlns:b="urn:uuid:c2f41010-65b3-11d1-a29f-00aa00c14882/"
+xmlns:e="urn:schemas:httpmail:"
+xmlns:d="urn:schemas:mailheader:"
+xmlns:c="xml:"
+xmlns:f="http://schemas.microsoft.com/exchange/"
+xmlns:i="urn:schemas-microsoft-com:office:office"
+xmlns:j="http://schemas.microsoft.com/repl/"
+xmlns:g="urn:schemas:calendar:"
+xmlns:h="urn:schemas-microsoft-com:exch-data:"
+xmlns:a="DAV:">
+  <a:contentrange>0-24</a:contentrange>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20CMFG-431%20_xF8FF_%20Universal%20converter%20concern-2.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <a:contentclass>urn:content-classes:message</a:contentclass>
+        <a:supportedlock>
+          <lockentry xmlns="DAV:">
+            <locktype>
+              <transaction>
+                <groupoperation/>
+              </transaction>
+            </locktype>
+            <lockscope>
+              <local/>
+            </lockscope>
+          </lockentry>
+        </a:supportedlock>
+        <a:getcontenttype>message/rfc822</a:getcontenttype>
+        <a:id>AQEAAAAH3/C+AQAAAAjFt54AAAAA</a:id>
+        <a:isfolder b:dt="boolean">0</a:isfolder>
+        <a:resourcetype/>
+        <a:getetag>"42a26a4d7327004090e5e8144e9b0808000008e856df"</a:getetag>
+        <lockdiscovery xmlns="DAV:"/>
+        <a:creationdate b:dt="dateTime.tz">2013-09-10T03:39:42.690Z</a:creationdate>
+        <a:ishidden b:dt="boolean">0</a:ishidden>
+        <a:parentname>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/</a:parentname>
+        <a:getcontentlength b:dt="int">59045</a:getcontentlength>
+        <a:isstructureddocument b:dt="boolean">0</a:isstructureddocument>
+        <a:displayname>RE: CMFG-431 / Universal converter concern-2.EML</a:displayname>
+        <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20CMFG-431%20_xF8FF_%20Universal%20converter%20concern-2.EML</a:href>
+        <a:isreadonly b:dt="boolean">0</a:isreadonly>
+        <a:uid>AQEAAAAIxbeeAAAAAAAAAAAAAAAA</a:uid>
+        <a:getlastmodified b:dt="dateTime.tz">2013-09-10T03:39:46.409Z</a:getlastmodified>
+        <a:iscollection b:dt="boolean">0</a:iscollection>
+      </a:prop>
+    </a:propstat>
+    <a:propstat>
+      <a:status>HTTP/1.1 404 Resource Not Found</a:status>
+      <a:prop>
+        <a:nosubs/>
+        <a:isroot/>
+        <a:searchrequest/>
+        <a:defaultdocument/>
+        <a:abstract/>
+        <a:lastaccessed/>
+        <a:getcontentlanguage/>
+        <a:objectcount/>
+        <a:comment/>
+        <a:haschildren/>
+        <a:searchtype/>
+        <a:visiblecount/>
+        <a:hassubs/>
+        <a:childcount/>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+</a:multistatus>
+

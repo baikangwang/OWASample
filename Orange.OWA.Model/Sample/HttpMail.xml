@@ -1,0 +1,368 @@
+﻿<?xml version="1.0"?>
+<a:multistatus
+xmlns:b="urn:uuid:c2f41010-65b3-11d1-a29f-00aa00c14882/"
+xmlns:e="urn:schemas:httpmail:"
+xmlns:d="urn:schemas:mailheader:"
+xmlns:c="xml:"
+xmlns:f="http://schemas.microsoft.com/exchange/"
+xmlns:i="urn:schemas-microsoft-com:office:office"
+xmlns:j="http://schemas.microsoft.com/repl/"
+xmlns:g="urn:schemas:calendar:"
+xmlns:h="urn:schemas-microsoft-com:exch-data:"
+xmlns:a="DAV:">
+  <a:contentrange>0-24</a:contentrange>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20CMFG-431%20_xF8FF_%20Universal%20converter%20concern-2.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <e:textdescription>
+          Hi All,
+
+
+
+          The EcomExtracts DB I used is a local copy in my system now.
+
+          I had used the ctsqldev2000.EcomExtracts for testing before. Could we build the new table and stored procedure in this database?
+
+          We also need to create the usp_SelectCustCodeDetailByItemNbrAndCompanyCode in this database. It has been created in my local database.
+
+
+
+          About the “d)The shipping ask confirmation files of the Ecometry, I think these orders in the files should be also in the PZM database”, I will explain:
+
+
+
+          The Shipping Confirmation files should be created from Ecometry.
+
+          The 431 service will create the ShpAck xml based on these files.
+
+          But there are not enough data in these files.
+
+          We need to get the completed data from PZM database, then update some fields by the Shipping Confirmation files of Ecometry.
+
+          The detail steps are:
+
+          Get the Shipping Confirmation files from a special shared folder.
+
+          Get the order ID from the Shipping Confirmation file.
+
+          Call CommonDataAccess.GetICSMOrderByOrderId() to get the IcsmOrder by the order Id.
+
+          Call CommonDataAccess.GetLineItemsByOrderNumber() to get the LineItems.
+
+          Call ICSMShipAck() to create the ShpAck by the IcsmOrder and LineItems.
+
+          Update the ShipNoticeRequest by the data in Shipping Confirmation files.
+
+          Create and drop the ShpAck xml to special folder.
+
+          Because the service need some  order data to create the ShpAck, so these orders should be in PZM Database.
+
+          Or we can fix the Shipping Confirmation files by the existing order information in PZM Database.
+
+
+
+          About the 123Print PO and LV PO:
+
+          The service is coding base on the formatting of LV PO.
+
+          The LV PO and 123Print PO should be same formatting, but we still worry there are different between the 123Print and LV.
+
+          So we need some 123Print PO to analyze and compare with the LV PO.
+
+
+
+          Best Regards,
+
+          Ding Li
+
+
+
+
+
+          From: Cowan, Lisa L (PaperDirect)
+          Sent: Tuesday, September 10, 2013 5:51
+          To: Cowan, Lisa L (PaperDirect); Morris, Kimbrough S (PaperDirect); Lewis, Larry M (Current); Ding, Li (Northern Lights); Welch, Mike J (Current); Wang, Bai Kang (Northern Lights)
+          Cc: Tran, Lam D (PaperDirect); Zhang, Daniel (Current)
+          Subject: RE: CMFG-431 / Universal converter concern
+
+
+
+          Adding Baker -
+
+
+
+          From: Cowan, Lisa L (PaperDirect)
+          Sent: Monday, September 09, 2013 3:46 PM
+          To: Morris, Kimbrough S (PaperDirect); Lewis, Larry M (Current); Ding, Li (Northern Lights); Welch, Mike J (Current)
+          Cc: Tran, Lam D (PaperDirect); Zhang, Daniel (Current)
+          Subject: RE: CMFG-431 / Universal converter concern
+          Importance: High
+
+
+
+          Questions/open issues -
+
+
+
+          1)      Confirm whether the two items below were in the BRD or not. – Larry
+
+          2)      Decide if they are critical – Larry, Kimbrough, Mike
+
+          3)      Database
+
+          a.       Provide the DB schema – Li
+
+          b.      Or provide information for Kimbrough to create the tables and stored procedures - Li
+
+          4)      Create jira sub tasks for what needs changed –Larry
+
+
+
+          I have asked Mike to include Kimbrough in the PZM scrum call 9/10/13 to talk through these questions.
+
+
+
+          From: Morris, Kimbrough S (PaperDirect)
+          Sent: Thursday, September 05, 2013 8:45 AM
+          To: Zhang, Daniel (Current); Cowan, Lisa L (PaperDirect); Lewis, Larry M (Current)
+          Cc: Tran, Lam D (PaperDirect)
+          Subject: CMFG-431 / Universal converter concern
+
+
+
+          Daniel / Lisa / Larry,
+
+
+
+          I'm a little concerned by the two emails from Li last night.  It sounds like he still doesn't quite understand what we've asked for.  I don't think I read the final BRD that was given to Li, but based on the discussions I had with Larry, I think there's a disconnect somewhere.
+
+
+
+
+
+          In this first one, there's no database lookup table, he put it in the app.config.  And he's asking me for the name of the sproc, which means he thinks I'm doing the database work.  I thought he was.
+
+          Hi Kimbrough,
+
+
+
+          I had set these values in the app.config now.
+          They are the properties of the base processor.
+          The controller will get them from app.config and set to the processor object when creating the processor instance.
+          Would you please provide the stored procedure name for lookup them?
+          I will fix the code to get them from DB. This can reduce the number of configuration items.
+
+          Best Regards,
+          Ding Li
+
+
+
+          I had asked him for the database tables he's built so far, but he didn't respond to that question.  Based on the above comment, I don't know if he's built the table to hold the order data or not.
+
+          Larry and I were discussing the database side of this, and would like you to provide the schema you've developed so far so that we can review it.
+
+          --Kimbrough
+
+
+
+          In the second email, he's still referencing the PZM database.  I've attempted previously to explain that PZM has nothing to do with this converter program.  He's also talking about the difference between the 123Print PO and the LV PO.  The LV PO will never go through this program, as that's Ecometry's output.  I'm worried that he's coded for a file that he'll never see, and that file had lots of special stuff in it.  And again, he's asking that we provide the Source Code lookup table.  I added the a), b) etc to the things he listed.  a &amp; c we do need to set up.  b I can do, I just need to know I need to do it.  For d, if we drop everything after the comma, I think he's asking for a sample ship confirmation file from Andrew / Ecometry.
+
+          Hi All,
+
+          Thanks for Andrew and Danielle’s help. I had imported the ICSM PO into the Ecometry successfully.
+
+          For whole service, there may be some small problems what can be fix by changing configuration or little code changing.
+
+          For doing the integration &lt;app:ds:integration&gt;  testing &lt;app:ds:testing&gt; , please provide these assistant data to me when they are ready.
+          For example:
+          a)The CustCodeDetail data of the testing items in the T_Data_ItemMaster and T_Data_CustCodeDetail table, these testing items should exist in Ecometry.
+          b)The relation table of the  ICSMID, SourceCode, Company and Division.
+          c)The style converting data in the IcsmCodes Web service.
+          d)The shipping ask confirmation files of the Ecometry, I think these orders in the files should be also in the PZM database.
+
+          In addition &lt;app:ds:addition&gt; , is there any different or special logic between the 123Print processor and the universal processor of CMFG-431?
+          I think we also need some real PO xmls of 123print to research and confirm the different formatting between 123print PO and LV PO.
+
+
+
+          Best Regards,
+          Ding Li
+
+
+
+          Let me know what's decided on the database tasks, if I need to do it or he will.  But I need to see any database stuff he has developed so that it can be reviewed and adjusted if necessary.
+
+          --Kimbrough
+
+        </e:textdescription>
+        <e:fromemail>lding@nltechdev.com</e:fromemail>
+        <e:cc>"Tran, Lam D (PaperDirect)" &lt;LDTran@PaperDirect.com&gt;, "Zhang, Daniel (Current)" &lt;DZhang@currentinc.com&gt;</e:cc>
+        <e:displayto>Cowan, Lisa L (PaperDirect); Morris, Kimbrough S (PaperDirect); Lewis, Larry M (Current); Welch, Mike J (Current); Wang, Bai Kang (Northern Lights)</e:displayto>
+        <e:to>"Cowan, Lisa L (PaperDirect)" &lt;llcowan@paperdirect.com&gt;, "Morris, Kimbrough S (PaperDirect)" &lt;KSMorris@paperdirect.com&gt;, "Lewis, Larry M (Current)" &lt;LMLewis@Currentinc.com&gt;, "Welch, Mike J (Current)" &lt;MJWelch@Currentinc.com&gt;, "Wang, Bai Kang (Northern Lights)" &lt;bkwang@nltechdev.com&gt;</e:to>
+        <e:thread-topic>CMFG-431 / Universal converter concern</e:thread-topic>
+        <e:datereceived b:dt="dateTime.tz">2013-09-10T03:39:46.190Z</e:datereceived>
+        <e:displaycc>Tran, Lam D (PaperDirect); Zhang, Daniel (Current)</e:displaycc>
+        <e:sendername>Ding, Li (Northern Lights)</e:sendername>
+        <e:htmldescription>
+          &lt;html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:p="urn:schemas-microsoft-com:office:powerpoint" xmlns:a="urn:schemas-microsoft-com:office:access" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema" xmlns:b="urn:schemas-microsoft-com:office:publisher" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet" xmlns:odc="urn:schemas-microsoft-com:office:odc" xmlns:oa="urn:schemas-microsoft-com:office:activation" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:q="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rtc="http://microsoft.com/officenet/conferencing" xmlns:D="DAV:" xmlns:Repl="http://schemas.microsoft.com/repl/" xmlns:mt="http://schemas.microsoft.com/sharepoint/soap/meetings/" xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml" xmlns:ppda="http://www.passport.com/NameSpace.xsd" xmlns:ois="http://schemas.microsoft.com/sharepoint/soap/ois/" xmlns:dir="http://schemas.microsoft.com/sharepoint/soap/directory/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:dsp="http://schemas.microsoft.com/sharepoint/dsp" xmlns:udc="http://schemas.microsoft.com/data/udc" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sub="http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/" xmlns:ec="http://www.w3.org/2001/04/xmlenc#" xmlns:sp="http://schemas.microsoft.com/sharepoint/" xmlns:sps="http://schemas.microsoft.com/sharepoint/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:udcs="http://schemas.microsoft.com/data/udc/soap" xmlns:udcxf="http://schemas.microsoft.com/data/udc/xmlfile" xmlns:udcp2p="http://schemas.microsoft.com/data/udc/parttopart" xmlns:wf="http://schemas.microsoft.com/sharepoint/soap/workflow/" xmlns:dsss="http://schemas.microsoft.com/office/2006/digsig-setup" xmlns:dssi="http://schemas.microsoft.com/office/2006/digsig" xmlns:mdssi="http://schemas.openxmlformats.org/package/2006/digital-signature" xmlns:mver="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:mrels="http://schemas.openxmlformats.org/package/2006/relationships" xmlns:spwp="http://microsoft.com/sharepoint/webpartpages" xmlns:ex12t="http://schemas.microsoft.com/exchange/services/2006/types" xmlns:ex12m="http://schemas.microsoft.com/exchange/services/2006/messages" xmlns:pptsl="http://schemas.microsoft.com/sharepoint/soap/SlideLibrary/" xmlns:spsl="http://microsoft.com/webservices/SharePointPortalServer/PublishedLinksService" xmlns:Z="urn:schemas-microsoft-com:" xmlns:st="&amp;#1;" xmlns="http://www.w3.org/TR/REC-html40"&gt;&lt;head&gt;&lt;meta name=Generator content="Microsoft Word 12 (filtered medium)"&gt;&lt;!--[if !mso]&gt;&lt;style&gt;v\:* {behavior:url(#default#VML);}
+          o\:* {behavior:url(#default#VML);}
+          w\:* {behavior:url(#default#VML);}
+          .shape {behavior:url(#default#VML);}
+          &lt;/style&gt;&lt;![endif]--&gt;&lt;style&gt;&lt;!--
+          /* Font Definitions */
+          @font-face
+          {font-family:SimSun;
+          panose-1:2 1 6 0 3 1 1 1 1 1;}
+          @font-face
+          {font-family:"Cambria Math";
+          panose-1:2 4 5 3 5 4 6 3 2 4;}
+          @font-face
+          {font-family:Calibri;
+          panose-1:2 15 5 2 2 2 4 3 2 4;}
+          @font-face
+          {font-family:Tahoma;
+          panose-1:2 11 6 4 3 5 4 4 2 4;}
+          @font-face
+          {font-family:"\@SimSun";
+          panose-1:2 1 6 0 3 1 1 1 1 1;}
+          /* Style Definitions */
+          p.MsoNormal, li.MsoNormal, div.MsoNormal
+          {margin:0in;
+          margin-bottom:.0001pt;
+          font-size:12.0pt;
+          font-family:"Times New Roman","serif";}
+          a:link, span.MsoHyperlink
+          {mso-style-priority:99;
+          color:blue;
+          text-decoration:underline;}
+          a:visited, span.MsoHyperlinkFollowed
+          {mso-style-priority:99;
+          color:purple;
+          text-decoration:underline;}
+          p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+          {mso-style-priority:99;
+          mso-style-link:"Balloon Text Char";
+          margin:0in;
+          margin-bottom:.0001pt;
+          font-size:8.0pt;
+          font-family:"Tahoma","sans-serif";}
+          p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+          {mso-style-priority:34;
+          margin-top:0in;
+          margin-right:0in;
+          margin-bottom:0in;
+          margin-left:.5in;
+          margin-bottom:.0001pt;
+          font-size:12.0pt;
+          font-family:"Times New Roman","serif";}
+          span.EmailStyle18
+          {mso-style-type:personal;
+          font-family:"Calibri","sans-serif";
+          color:#1F497D;}
+          span.EmailStyle19
+          {mso-style-type:personal;
+          font-family:"Calibri","sans-serif";
+          color:#1F497D;}
+          span.EmailStyle20
+          {mso-style-type:personal-reply;
+          font-family:"Calibri","sans-serif";
+          color:#1F497D;}
+          span.BalloonTextChar
+          {mso-style-name:"Balloon Text Char";
+          mso-style-priority:99;
+          mso-style-link:"Balloon Text";
+          font-family:"Tahoma","sans-serif";}
+          .MsoChpDefault
+          {mso-style-type:export-only;
+          font-size:10.0pt;}
+          @page WordSection1
+          {size:8.5in 11.0in;
+          margin:1.0in 1.0in 1.0in 1.0in;}
+          div.WordSection1
+          {page:WordSection1;}
+          /* List Definitions */
+          @list l0
+          {mso-list-id:876822321;
+          mso-list-type:hybrid;
+          mso-list-template-ids:1723349134 67698705 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+          @list l0:level1
+          {mso-level-text:"%1\)";
+          mso-level-tab-stop:none;
+          mso-level-number-position:left;
+          text-indent:-.25in;}
+          @list l0:level2
+          {mso-level-number-format:alpha-lower;
+          mso-level-tab-stop:none;
+          mso-level-number-position:left;
+          text-indent:-.25in;}
+          @list l0:level3
+          {mso-level-tab-stop:1.5in;
+          mso-level-number-position:left;
+          text-indent:-.25in;}
+          @list l0:level4
+          {mso-level-tab-stop:2.0in;
+          mso-level-number-position:left;
+          text-indent:-.25in;}
+          @list l0:level5
+          {mso-level-tab-stop:2.5in;
+          mso-level-number-position:left;
+          text-indent:-.25in;}
+          @list l0:level6
+          {mso-level-tab-stop:3.0in;
+          mso-level-number-position:left;
+          text-indent:-.25in;}
+          @list l0:level7
+          {mso-level-tab-stop:3.5in;
+          mso-level-number-position:left;
+          text-indent:-.25in;}
+          @list l0:level8
+          {mso-level-tab-stop:4.0in;
+          mso-level-number-position:left;
+          text-indent:-.25in;}
+          @list l0:level9
+          {mso-level-tab-stop:4.5in;
+          mso-level-number-position:left;
+          text-indent:-.25in;}
+          ol
+          {margin-bottom:0in;}
+          ul
+          {margin-bottom:0in;}
+          --&gt;&lt;/style&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;
+          &lt;o:shapedefaults v:ext="edit" spidmax="2050" /&gt;
+          &lt;/xml&gt;&lt;![endif]--&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;
+          &lt;o:shapelayout v:ext="edit"&gt;
+          &lt;o:idmap v:ext="edit" data="1" /&gt;
+          &lt;/o:shapelayout&gt;&lt;/xml&gt;&lt;![endif]--&gt;&lt;/head&gt;&lt;body lang=EN-US link=blue vlink=purple&gt;&lt;div class=WordSection1&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Hi All,&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;The EcomExtracts DB I used is a local copy in my system now.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;I had used the ctsqldev2000.EcomExtracts for testing before. Could we build the new table and stored procedure in this database?&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;We also need to create the usp_SelectCustCodeDetailByItemNbrAndCompanyCode in this database. It has been created in my local database.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;About the &amp;#8220;d)The shipping ask confirmation files of the Ecometry, I think these orders in the files should be also in the PZM database&amp;#8221;, I will explain:&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;img width=852 height=219 id="Picture_x0020_2" src="cid:image001.png@01CEAE14.4D332720"&gt;&lt;/span&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;The Shipping Confirmation files should be created from Ecometry.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;The 431 service will create the ShpAck xml based on these files.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;But there are not enough data in these files.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;We need to get the completed data from PZM database, then update some fields by the Shipping Confirmation files of Ecometry.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;The detail steps are:&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='margin-left:.5in'&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Get the Shipping Confirmation files from a special shared folder.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='margin-left:.5in'&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Get the order ID from the Shipping Confirmation file.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='margin-left:.5in'&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Call CommonDataAccess.GetICSMOrderByOrderId() to get the IcsmOrder by the order Id.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='margin-left:.5in'&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Call CommonDataAccess.GetLineItemsByOrderNumber() to get the LineItems.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='margin-left:.5in'&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Call ICSMShipAck() to create the ShpAck by the IcsmOrder and LineItems.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='margin-left:.5in'&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Update the ShipNoticeRequest by the data in Shipping Confirmation files.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='margin-left:.5in'&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Create and drop the ShpAck xml to special folder.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Because the service need some &amp;nbsp;order data to create the ShpAck, so these orders should be in PZM Database.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Or we can fix the Shipping Confirmation files by the existing order information in PZM Database.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;About the 123Print PO and LV PO:&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;The service is coding base on the formatting of LV PO. &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;The LV PO and 123Print PO should be same formatting, but we still worry there are different between the 123Print and LV.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;So we need some 123Print PO to analyze and compare with the LV PO.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Best Regards,&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Ding Li&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;div style='border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in 0in 0in'&gt;&lt;p class=MsoNormal&gt;&lt;b&gt;&lt;span style='font-size:10.0pt;font-family:"Tahoma","sans-serif"'&gt;From:&lt;/span&gt;&lt;/b&gt;&lt;span style='font-size:10.0pt;font-family:"Tahoma","sans-serif"'&gt; Cowan, Lisa L (PaperDirect) &lt;br&gt;&lt;b&gt;Sent:&lt;/b&gt; Tuesday, September 10, 2013 5:51&lt;br&gt;&lt;b&gt;To:&lt;/b&gt; Cowan, Lisa L (PaperDirect); Morris, Kimbrough S (PaperDirect); Lewis, Larry M (Current); Ding, Li (Northern Lights); Welch, Mike J (Current); Wang, Bai Kang (Northern Lights)&lt;br&gt;&lt;b&gt;Cc:&lt;/b&gt; Tran, Lam D (PaperDirect); Zhang, Daniel (Current)&lt;br&gt;&lt;b&gt;Subject:&lt;/b&gt; RE: CMFG-431 / Universal converter concern&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=MsoNormal&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Adding Baker - &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;div style='border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in 0in 0in'&gt;&lt;p class=MsoNormal&gt;&lt;b&gt;&lt;span style='font-size:10.0pt;font-family:"Tahoma","sans-serif"'&gt;From:&lt;/span&gt;&lt;/b&gt;&lt;span style='font-size:10.0pt;font-family:"Tahoma","sans-serif"'&gt; Cowan, Lisa L (PaperDirect) &lt;br&gt;&lt;b&gt;Sent:&lt;/b&gt; Monday, September 09, 2013 3:46 PM&lt;br&gt;&lt;b&gt;To:&lt;/b&gt; Morris, Kimbrough S (PaperDirect); Lewis, Larry M (Current); Ding, Li (Northern Lights); Welch, Mike J (Current)&lt;br&gt;&lt;b&gt;Cc:&lt;/b&gt; Tran, Lam D (PaperDirect); Zhang, Daniel (Current)&lt;br&gt;&lt;b&gt;Subject:&lt;/b&gt; RE: CMFG-431 / Universal converter concern&lt;br&gt;&lt;b&gt;Importance:&lt;/b&gt; High&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=MsoNormal&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Questions/open issues - &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoListParagraph style='text-indent:-.25in;mso-list:l0 level1 lfo2'&gt;&lt;![if !supportLists]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;span style='mso-list:Ignore'&gt;1)&lt;span style='font:7.0pt "Times New Roman"'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;![endif]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Confirm whether the two items below were in the BRD or not. &amp;#8211; Larry&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoListParagraph style='text-indent:-.25in;mso-list:l0 level1 lfo2'&gt;&lt;![if !supportLists]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;span style='mso-list:Ignore'&gt;2)&lt;span style='font:7.0pt "Times New Roman"'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;![endif]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Decide if they are critical &amp;#8211; Larry, Kimbrough, Mike &lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoListParagraph style='text-indent:-.25in;mso-list:l0 level1 lfo2'&gt;&lt;![if !supportLists]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;span style='mso-list:Ignore'&gt;3)&lt;span style='font:7.0pt "Times New Roman"'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;![endif]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Database&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoListParagraph style='margin-left:1.0in;text-indent:-.25in;mso-list:l0 level2 lfo2'&gt;&lt;![if !supportLists]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;span style='mso-list:Ignore'&gt;a.&lt;span style='font:7.0pt "Times New Roman"'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;![endif]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Provide the DB schema &amp;#8211; Li&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoListParagraph style='margin-left:1.0in;text-indent:-.25in;mso-list:l0 level2 lfo2'&gt;&lt;![if !supportLists]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;span style='mso-list:Ignore'&gt;b.&lt;span style='font:7.0pt "Times New Roman"'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;![endif]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Or provide information for Kimbrough to create the tables and stored procedures - Li&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoListParagraph style='text-indent:-.25in;mso-list:l0 level1 lfo2'&gt;&lt;![if !supportLists]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;span style='mso-list:Ignore'&gt;4)&lt;span style='font:7.0pt "Times New Roman"'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;![endif]&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;Create jira sub tasks for what needs changed &amp;#8211;Larry&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D;background:yellow;mso-highlight:yellow'&gt;I have asked Mike to include Kimbrough in the PZM scrum call 9/10/13 to talk through these questions.&lt;/span&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;div style='border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in 0in 0in'&gt;&lt;p class=MsoNormal&gt;&lt;b&gt;&lt;span style='font-size:10.0pt;font-family:"Tahoma","sans-serif"'&gt;From:&lt;/span&gt;&lt;/b&gt;&lt;span style='font-size:10.0pt;font-family:"Tahoma","sans-serif"'&gt; Morris, Kimbrough S (PaperDirect) &lt;br&gt;&lt;b&gt;Sent:&lt;/b&gt; Thursday, September 05, 2013 8:45 AM&lt;br&gt;&lt;b&gt;To:&lt;/b&gt; Zhang, Daniel (Current); Cowan, Lisa L (PaperDirect); Lewis, Larry M (Current)&lt;br&gt;&lt;b&gt;Cc:&lt;/b&gt; Tran, Lam D (PaperDirect)&lt;br&gt;&lt;b&gt;Subject:&lt;/b&gt; CMFG-431 / Universal converter concern&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=MsoNormal&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/p&gt;&lt;div&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif"'&gt;Daniel / Lisa / Larry,&lt;/span&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p class=MsoNormal&gt;&amp;nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif"'&gt;I'm a little concerned by the two emails from Li last night.&amp;nbsp; It sounds like he still doesn't quite understand what we've asked for.&amp;nbsp; I don't think I read the final BRD that was given to Li, but based on the discussions I had with Larry,&amp;nbsp;I think there's a disconnect somewhere.&amp;nbsp; &lt;/span&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p class=MsoNormal&gt;&amp;nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p class=MsoNormal&gt;&amp;nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p class=MsoNormal&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif"'&gt;In this first one, there's no database lookup table, he put it in the app.config.&amp;nbsp; And he's asking me for the name of the sproc, which means he thinks I'm doing the database work.&amp;nbsp; I thought he was.&lt;/span&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;/div&gt;&lt;blockquote style='margin-top:5.0pt;margin-right:0in;margin-bottom:5.0pt'&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;Hi Kimbrough,&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:red'&gt;I had set these values in the app.config now.&lt;br&gt;&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;They are the properties of the base processor. &lt;br&gt;The controller will get them from app.config and set to the processor object when creating the processor instance.&lt;br&gt;&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:red'&gt;Would you please provide the stored procedure name for lookup them?&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;&lt;br&gt;I will fix the code to get them from DB. This can reduce the number of configuration items.&lt;/span&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;Best Regards,&lt;br&gt;Ding Li&lt;/span&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&amp;nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'&gt;I had asked him for the database tables he's built so far, but he didn't respond to that question.&amp;nbsp; Based on the above comment, I don't know if he's built the table to hold the order data or not.&lt;/span&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;blockquote style='margin-top:5.0pt;margin-right:0in;margin-bottom:5.0pt'&gt;&lt;div&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:blue'&gt;Larry and I were discussing the database side of this, and would like you to provide the schema you've developed so far so that we can review it.&lt;/span&gt;&lt;span style='color:black'&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:blue'&gt;--Kimbrough&lt;/span&gt;&lt;span style='color:black'&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&amp;nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'&gt;In the second email, he's still referencing the PZM database.&amp;nbsp; I've attempted previously to explain that PZM has nothing to do with this converter&amp;nbsp;program.&amp;nbsp; He's also talking about the difference between the 123Print PO and the LV PO.&amp;nbsp; The LV PO will never go through this program, as that's Ecometry's output.&amp;nbsp; I'm worried that he's coded for a file that he'll never see, and that file had lots of special stuff in it.&amp;nbsp; And again, he's asking that we provide the Source Code lookup table.&amp;nbsp; I added the a), b) etc to the things he listed.&amp;nbsp; a &amp;amp; c we do need to set up.&amp;nbsp; b I can do, I just need to know I need to do it.&amp;nbsp; For d, if we drop everything after the comma, I think he's asking for a sample ship confirmation file from Andrew / Ecometry.&lt;/span&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;&lt;blockquote style='margin-top:5.0pt;margin-right:0in;margin-bottom:5.0pt'&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;Hi All,&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;Thanks for Andrew and Danielle&amp;#8217;s help. I had imported the ICSM PO into the Ecometry successfully.&lt;br&gt;&lt;br&gt;For whole service, there may be some small problems what can be fix by changing configuration or little code changing.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;For doing the &lt;/span&gt;&lt;span style='color:#1F497D'&gt;&lt;a href="app:ds:integration" title="app:ds:integration"&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D;text-decoration:none'&gt;integration&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt; &lt;/span&gt;&lt;span style='color:#1F497D'&gt;&lt;a href="app:ds:testing" title="app:ds:testing"&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D;text-decoration:none'&gt;testing&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;, please provide these assistant data to me when they are ready.&lt;br&gt;For example:&lt;br&gt;&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:blue'&gt;a)&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;The CustCodeDetail data of the testing items in the T_Data_ItemMaster and T_Data_CustCodeDetail table, these testing items should exist in Ecometry.&lt;br&gt;&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:blue'&gt;b)&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:red'&gt;The relation table of the &amp;nbsp;ICSMID, SourceCode, Company and Division.&lt;br&gt;&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:blue'&gt;c)&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;The style converting data in the IcsmCodes Web service.&lt;br&gt;&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:blue'&gt;d)&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;The shipping ask confirmation files of the Ecometry, I think these orders in the files should be also in the &lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:red'&gt;PZM database.&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;In &lt;/span&gt;&lt;span style='color:#1F497D'&gt;&lt;a href="app:ds:addition" title="app:ds:addition"&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D;text-decoration:none'&gt;addition&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;, is there any different or special logic between the 123Print processor and the universal processor of CMFG-431?&lt;br&gt;I think we also need some real PO xmls of 123print to research and &lt;/span&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:red'&gt;confirm the different formatting between 123print PO and LV PO.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='color:#1F497D'&gt;&lt;o:p&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:#1F497D'&gt;Best Regards,&lt;br&gt;Ding Li&lt;/span&gt;&lt;span style='color:black'&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='color:black'&gt;&amp;nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'&gt;Let me know what's decided on the database tasks, if I need to do it or he will.&amp;nbsp; But I need to see any database stuff he has developed so that it can be reviewed and adjusted if necessary.&lt;/span&gt;&lt;span style='color:black'&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'&gt;&lt;span style='font-size:10.0pt;font-family:"Arial","sans-serif";color:black'&gt;--Kimbrough&lt;/span&gt;&lt;span style='color:black'&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+        </e:htmldescription>
+        <e:normalizedsubject>CMFG-431 / Universal converter concern</e:normalizedsubject>
+        <e:from>"Ding, Li (Northern Lights)" &lt;lding@nltechdev.com&gt;</e:from>
+        <e:date b:dt="dateTime.tz">2013-09-10T03:39:41.143Z</e:date>
+        <e:fromname>Ding, Li (Northern Lights)</e:fromname>
+        <e:submitted b:dt="boolean">0</e:submitted>
+        <e:hasattachment b:dt="boolean">1</e:hasattachment>
+        <e:read b:dt="boolean">1</e:read>
+        <e:priority b:dt="int">0</e:priority>
+      </a:prop>
+    </a:propstat>
+    <a:propstat>
+      <a:status>HTTP/1.1 404 Resource Not Found</a:status>
+      <a:prop>
+        <e:sender/>
+        <e:senderemail/>
+        <e:bcc/>
+        <e:saveinsent/>
+        <e:savedestination/>
+        <e:reply-to/>
+        <e:messageflag/>
+        <e:content-media-type/>
+        <e:flagcompleted/>
+        <e:content-disposition-type/>
+        <e:expiry-date/>
+        <e:unreadcount/>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+</a:multistatus>
+

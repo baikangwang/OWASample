@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+<a:multistatus
+xmlns:b="urn:uuid:c2f41010-65b3-11d1-a29f-00aa00c14882/"
+xmlns:e="urn:schemas:httpmail:"
+xmlns:d="urn:schemas:mailheader:"
+xmlns:c="xml:"
+xmlns:f="http://schemas.microsoft.com/exchange/"
+xmlns:i="urn:schemas-microsoft-com:office:office"
+xmlns:j="http://schemas.microsoft.com/repl/"
+xmlns:g="urn:schemas:calendar:"
+xmlns:h="urn:schemas-microsoft-com:exch-data:"
+xmlns:a="DAV:">
+  <a:contentrange>0-24</a:contentrange>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20CMFG-431%20_xF8FF_%20Universal%20converter%20concern-2.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <j:repl-uid>rid:42a26a4d7327004090e5e8144e9b0808000008c5b79e</j:repl-uid>
+        <j:resourcetag>rt:42a26a4d7327004090e5e8144e9b0808000008c5b79e42a26a4d7327004090e5e8144e9b0808000008e856df</j:resourcetag>
+        <e:priority b:dt="int">0</e:priority>
+      </a:prop>
+    </a:propstat>
+    <a:propstat>
+      <a:status>HTTP/1.1 404 Resource Not Found</a:status>
+      <a:prop>
+        <j:contenttag/>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+</a:multistatus>
+

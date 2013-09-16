@@ -1,0 +1,80 @@
+﻿<?xml version="1.0"?>
+<a:multistatus
+xmlns:b="urn:uuid:c2f41010-65b3-11d1-a29f-00aa00c14882/"
+xmlns:e="urn:schemas:httpmail:"
+xmlns:d="urn:schemas:mailheader:"
+xmlns:c="xml:"
+xmlns:f="http://schemas.microsoft.com/exchange/"
+xmlns:i="urn:schemas-microsoft-com:office:office"
+xmlns:j="http://schemas.microsoft.com/repl/"
+xmlns:g="urn:schemas:calendar:"
+xmlns:h="urn:schemas-microsoft-com:exch-data:"
+xmlns:a="DAV:">
+  <a:contentrange>0-24</a:contentrange>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20CMFG-431%20_xF8FF_%20Universal%20converter%20concern-2.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <d:in-reply-to>&lt;FBB9A90EA3566E41BD92880EF64CEAB60236F8@TCEXCH04.corp.tcc.inet&gt;</d:in-reply-to>
+        <d:thread-topic>CMFG-431 / Universal converter concern</d:thread-topic>
+        <d:references>&lt;45CDE821F8BE7A49ABA313113782BCAC0309A1@TCEXCH04.corp.tcc.inet&gt;  &lt;FBB9A90EA3566E41BD92880EF64CEAB60236F8@TCEXCH04.corp.tcc.inet&gt;</d:references>
+        <d:cc>"Tran, Lam D (PaperDirect)" &lt;LDTran@PaperDirect.com&gt;, "Zhang, Daniel (Current)" &lt;DZhang@currentinc.com&gt;</d:cc>
+        <d:from>"Ding, Li (Northern Lights)" &lt;lding@nltechdev.com&gt;</d:from>
+        <d:received>by tcex04.corp.tcc.inet  id &lt;01CEADD7.64DA0792@tcex04.corp.tcc.inet&gt;; Mon, 9 Sep 2013 22:39:46 -0500</d:received>
+        <d:message-id>&lt;42A26A4D7327004090E5E8144E9B080808E031AA@tcex04.corp.tcc.inet&gt;</d:message-id>
+        <d:subject>RE: CMFG-431 / Universal converter concern</d:subject>
+        <d:content-class>urn:content-classes:message</d:content-class>
+        <d:to>"Cowan, Lisa L (PaperDirect)" &lt;llcowan@paperdirect.com&gt;, "Morris, Kimbrough S (PaperDirect)" &lt;KSMorris@paperdirect.com&gt;, "Lewis, Larry M (Current)" &lt;LMLewis@Currentinc.com&gt;, "Welch, Mike J (Current)" &lt;MJWelch@Currentinc.com&gt;, "Wang, Bai Kang (Northern Lights)" &lt;bkwang@nltechdev.com&gt;</d:to>
+        <d:date b:dt="dateTime.tz">2013-09-10T03:39:41.143Z</d:date>
+        <d:thread-index>Ac6qRn9J9LcsezN2Tkur707iNt/lrADXbgCgAACZq2AABuf30A==</d:thread-index>
+      </a:prop>
+    </a:propstat>
+    <a:propstat>
+      <a:status>HTTP/1.1 404 Resource Not Found</a:status>
+      <a:prop>
+        <d:posting-version/>
+        <d:x-message-completed/>
+        <d:comment/>
+        <d:content-transfer-encoding/>
+        <d:expires/>
+        <d:x-unsent/>
+        <d:content-language/>
+        <d:xref/>
+        <d:control/>
+        <d:disposition-notification-to/>
+        <d:keywords/>
+        <d:organization/>
+        <d:path/>
+        <d:content-type/>
+        <d:relay-version/>
+        <d:bcc/>
+        <d:content-id/>
+        <d:x-message-flag/>
+        <d:content-description/>
+        <d:original-recipient/>
+        <d:lines/>
+        <d:reply-to/>
+        <d:x-mailer/>
+        <d:newsgroups/>
+        <d:reply-by/>
+        <d:followup-to/>
+        <d:distribution/>
+        <d:return-receipt-to/>
+        <d:approved/>
+        <d:expiry-date/>
+        <d:importance/>
+        <d:return-path/>
+        <d:summary/>
+        <d:sensitivity/>
+        <d:priority/>
+        <d:sender/>
+        <d:content-location/>
+        <d:mime-version/>
+        <d:content-base/>
+        <d:disposition/>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+</a:multistatus>
+

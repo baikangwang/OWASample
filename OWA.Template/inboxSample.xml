@@ -1,0 +1,405 @@
+﻿<?xml version="1.0"?>
+<a:multistatus xmlns:b="urn:uuid:c2f41010-65b3-11d1-a29f-00aa00c14882/" xmlns:c="xml:" xmlns:a="DAV:">
+  <a:contentrange>0-24</a:contentrange>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/apply%20for%20leave.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Ding, Li (Northern Lights)</from>
+        <recvd b:dt="dateTime.tz">2013-09-08T16:33:33.546Z</recvd>
+        <subj>apply for leave</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">1</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20Please%20review%20-%20Possible%20issue%20with%20new%20Shipinator.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Welch, Mike J (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-07T14:31:47.000Z</recvd>
+        <subj>RE: Please review - Possible issue with new Shipinator</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/CMFG-1145%20-%20CU%20Ship%20Confirmation%20file.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-reply.gif</smicon>
+        <from>Welch, Mike J (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T21:51:52.000Z</recvd>
+        <subj>CMFG-1145 - CU Ship Confirmation file</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20Converter%20paths.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-reply.gif</smicon>
+        <from>Welch, Mike J (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T14:55:09.000Z</recvd>
+        <subj>RE: Converter paths</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20[PZM]%20Importronic%20Build%20error.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Welch, Mike J (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T14:46:54.000Z</recvd>
+        <subj>RE: [PZM] Importronic Build error</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">1</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/Converter%20paths.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-reply.gif</smicon>
+        <from>Lewis, Larry M (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T14:16:42.000Z</recvd>
+        <subj>Converter paths</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20[CMFG-39]%20CMFG-1140:%20Bug%20-%20Special%20Character%20are%20not%20escaped-3.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Lewis, Larry M (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T14:07:11.876Z</recvd>
+        <subj>RE: [CMFG-39] CMFG-1140: Bug - Special Character are not escaped</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20[CMFG-39]%20CMFG-1140:%20Bug%20-%20Special%20Character%20are%20not%20escaped-2.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Lewis, Larry M (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T13:43:00.000Z</recvd>
+        <subj>RE: [CMFG-39] CMFG-1140: Bug - Special Character are not escaped</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20[CMFG-39]%20CMFG-1140:%20Bug%20-%20Special%20Character%20are%20not%20escaped.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-reply.gif</smicon>
+        <from>Lewis, Larry M (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T13:26:52.000Z</recvd>
+        <subj>RE: [CMFG-39] CMFG-1140: Bug - Special Character are not escaped</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20Deluxe%20Envelopes%20-%20CMFG-39%20and%20subtasks-4.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Lewis, Larry M (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T13:20:08.000Z</recvd>
+        <subj>RE: Deluxe Envelopes - CMFG-39 and subtasks</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">1</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/FW:%20Clean%20the%20tables%20and%20place%20the%20chairs%20after%20each%20meeting.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Hu, Qian Li (Northern Lights)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T06:53:39.470Z</recvd>
+        <subj>FW: Clean the tables and place the chairs after each meeting</subj>
+        <prio b:dt="int">2</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/Out%20of%20Office%20AutoReply:%20Deluxe%20Envelopes%20-%20CMFG-39%20and%20subtasks.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-oof.gif</smicon>
+        <from>Zhang, Daniel (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T03:20:57.000Z</recvd>
+        <subj>Out of Office AutoReply: Deluxe Envelopes - CMFG-39 and subtasks</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note.Rules.OofTemplate.Microsoft</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/Out%20of%20Office%20AutoReply:%20Deluxe%20Envelopes%20-%20CMFG-39%20and%20subtasks-2.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-oof.gif</smicon>
+        <from>Cowan, Lisa L (PaperDirect)</from>
+        <recvd b:dt="dateTime.tz">2013-09-06T03:20:57.000Z</recvd>
+        <subj>Out of Office AutoReply: Deluxe Envelopes - CMFG-39 and subtasks</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note.Rules.OofTemplate.Microsoft</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/[JIRA]%20Updated:%20(CMFG-1083)%20Enh%20-%20Data%20Manager%20Refactor%20-%20Find%20Orphans-4.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Lisa Cowan (JIRA)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T22:03:48.000Z</recvd>
+        <subj>[JIRA] Updated: (CMFG-1083) Enh - Data Manager Refactor - Find Orphans</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/[JIRA]%20Updated:%20(CMFG-1082)%20Enh%20-%20Data%20Manager%20Refactor%20-%20Purge%20Deleted-4.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Lisa Cowan (JIRA)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T22:03:46.000Z</recvd>
+        <subj>[JIRA] Updated: (CMFG-1082) Enh - Data Manager Refactor - Purge Deleted</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/Deluxe%20Envelopes%20-%20CMFG-39%20and%20subtasks.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-reply.gif</smicon>
+        <from>Zhang, Daniel (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T20:58:44.000Z</recvd>
+        <subj>Deluxe Envelopes - CMFG-39 and subtasks</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20My%20vacation-2.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Zhang, Daniel (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T17:15:34.000Z</recvd>
+        <subj>RE: My vacation</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/[JIRA]%20Updated:%20(CMFG-1155)%20Enh%20-%20Remove%20Leading%20Zeroes%20on%20Order%20Number.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Larry Lewis (JIRA)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T17:01:47.000Z</recvd>
+        <subj>[JIRA] Updated: (CMFG-1155) Enh - Remove Leading Zeroes on Order Number</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/[JIRA]%20Updated:%20(CMFG-1155)%20Enh%20-%20Remove%20Leading%20Zeroes%20on%20Order%20Number-2.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Larry Lewis (JIRA)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T17:01:47.000Z</recvd>
+        <subj>[JIRA] Updated: (CMFG-1155) Enh - Remove Leading Zeroes on Order Number</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/[JIRA]%20Created:%20(CMFG-1155)%20Enh%20-%20Remove%20Leading%20Zeroes%20on%20Order%20Number.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Larry Lewis (JIRA)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T16:49:47.000Z</recvd>
+        <subj>[JIRA] Created: (CMFG-1155) Enh - Remove Leading Zeroes on Order Number</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/[JIRA]%20Updated:%20(CMFG-1154)%20Bug%20-%20Naming%20Conventions%20on%20Deluxe%20Output%20Incorrect.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Larry Lewis (JIRA)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T16:45:47.000Z</recvd>
+        <subj>[JIRA] Updated: (CMFG-1154) Bug - Naming Conventions on Deluxe Output Incorrect</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/[JIRA]%20Created:%20(CMFG-1154)%20Bug%20-%20Naming%20Conventions%20on%20Deluxe%20Output%20Incorrect.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Larry Lewis (JIRA)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T16:43:46.000Z</recvd>
+        <subj>[JIRA] Created: (CMFG-1154) Bug - Naming Conventions on Deluxe Output Incorrect</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">0</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20Are%20you%20OK.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-reply.gif</smicon>
+        <from>Welch, Mike J (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T16:04:44.974Z</recvd>
+        <subj>RE: Are you OK</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">1</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20CMFG-431%20Testing-40.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Morris, Kimbrough S (PaperDirect)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T14:37:05.000Z</recvd>
+        <subj>RE: CMFG-431 Testing</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">1</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+  <a:response>
+    <a:href>https://webmail.taylorcorp.com/exchange/bkwang@nltechdev.com/Inbox/RE:%20CMFG-431%20Testing-39.EML</a:href>
+    <a:propstat>
+      <a:status>HTTP/1.1 200 OK</a:status>
+      <a:prop>
+        <smicon>https://webmail.taylorcorp.com/exchweb/img/icon-msg-read.gif</smicon>
+        <from>Reed, Danielle M (Current)</from>
+        <recvd b:dt="dateTime.tz">2013-09-05T14:30:31.000Z</recvd>
+        <subj>RE: CMFG-431 Testing</subj>
+        <prio b:dt="int">1</prio>
+        <fattach b:dt="boolean">1</fattach>
+        <r b:dt="boolean">1</r>
+        <m>IPM.Note</m>
+      </a:prop>
+    </a:propstat>
+  </a:response>
+</a:multistatus>
+
